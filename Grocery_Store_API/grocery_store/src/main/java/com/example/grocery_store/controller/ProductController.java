@@ -27,9 +27,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> findById(@PathVariable @NotNull String id) {
-        return productService.findById(id)
-                .map(recordFound -> ResponseEntity.ok().body(recordFound))
-                .orElse(ResponseEntity.notFound().build());
+    public Product findById(@PathVariable @NotNull String id) {
+        return productService.findById(id);
     }
 }
