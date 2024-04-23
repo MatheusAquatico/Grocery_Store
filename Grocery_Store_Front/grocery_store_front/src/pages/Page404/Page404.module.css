@@ -1,0 +1,20 @@
+.title2{
+    padding: 2em;
+}
+
+.text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bigger_text, .red_text{
+    font-size: 300px;
+    color: var(--danger-color);
+    font-weight: bold;
+}
+
+.red_text{
+    font-size: 2em;
+}

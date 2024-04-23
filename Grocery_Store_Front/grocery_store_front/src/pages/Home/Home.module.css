@@ -1,0 +1,12 @@
+.cards h2 {
+    text-align: center;
+}
+.list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 1em;
+}
