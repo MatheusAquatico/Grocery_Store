@@ -12,11 +12,16 @@ const Home = () => {
     const [modalData, setModalData] = useState<ProductData | null>(null);
 
     const search = async (id: string) => {
-        const productPromotionData = await axios.get("/api/products/" + id);
+        const productPromotionData = await productPromotionRequest(id);
         if(productPromotionData.data.promotions?.length > 0){
             handleOpenModal(productPromotionData.data);
         }
-    }    
+    }     
+
+    const productPromotionRequest = async (id: string) => {
+        const productPromotionData = await axios.get("/api/products/" + id);
+        return productPromotionData;
+    }
 
     const handleOpenModal = (data: ProductData) => {
         setModalData(data);
@@ -45,7 +50,7 @@ const Home = () => {
                 ): <p>Loading...</p>
            }
              {isModalOpen && modalData?.promotions && 
-            <Modal {...modalData.promotions[0]} openCloseModal={openCloseModal} />}
+            <Modal {...modalData} openCloseModal={openCloseModal} />}
         </section>
     )
 }
