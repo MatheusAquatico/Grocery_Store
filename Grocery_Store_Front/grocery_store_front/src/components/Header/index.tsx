@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
+import { FaShoppingCart } from 'react-icons/fa';
+import { BiHome } from 'react-icons/bi';
 
 const Header = () => {
     return (
@@ -7,8 +10,8 @@ const Header = () => {
                 My Grocery Store
             </span>
             <nav>
-                <a href="">Home</a>
-                <a href="">Home</a>
+                <Link to={'/'}><BiHome /></Link>
+                <Link to={'checkout'}><FaShoppingCart /></Link>
             </nav>
         </header>
     )
