@@ -1,9 +1,18 @@
 import { createContext, useContext, useState } from 'react';
 import { ItemData } from '../interfaces/ItemData';
 import { ProductData } from '../interfaces/ProductData';
+import toast from 'react-hot-toast';
 
 type CartContextProviderProps = {
     children: React.ReactNode;
+}
+
+const showAddedToast = () => {
+    toast.success("This product was added to the cart!")
+}
+
+const showRemovedToast = () => {
+    toast.success("This product was removed from the cart!")
 }
 
 const CartContext = createContext<ItemData>({"qty": 0, "itemId": "0", "itemName": "", "itemPrice": 0});
@@ -46,6 +55,11 @@ export function useCartContext() {
 
         newList = newList.filter((item) =>item.qty > 0);
 
+        if(addItem)
+            showAddedToast();
+        else
+            showRemovedToast();
+        
         return setCart(newList);
     }
 

@@ -12,7 +12,7 @@ const Home = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalData, setModalData] = useState<ProductData | null>(null);
 
-    const showToast = () => {
+    const showErrorToast = () => {
         toast.error("No promotions found for this product")
     }
 
@@ -21,7 +21,7 @@ const Home = () => {
         if(productPromotionData.data.promotions?.length > 0){
             handleOpenModal(productPromotionData.data);
         }else{
-            showToast();
+            showErrorToast();
         }
     }     
 
@@ -41,7 +41,6 @@ const Home = () => {
     
     return (
         <section className={styles.cards}>
-                {/* <Toast message="Your message here"/> */}
             <Toaster position="bottom-center" reverseOrder={false}/>
             <h2>Products</h2>
            {
