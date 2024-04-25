@@ -62,8 +62,12 @@
 }
 
 .qtd p{
-    font-size: 1.2em;
+    font-size: 0.5em;
     color: var(--secondary-color);
+}
+
+.qtd:hover{
+    background-color: var(--tertiary-color);
 }
 
 @media (max-width: 480px){
@@ -90,7 +94,7 @@
     }
 
     .qtd p{
-        font-size: 0.8em;
+        font-size: 0.4em;
     }
     
 }

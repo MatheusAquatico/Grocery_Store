@@ -19,8 +19,7 @@ const Header = () => {
             <nav>
                 <Link className={styles.margin} to={'/'}><BiHome /></Link>
                 <div className={styles.box}>
-                    <Link to={'checkout'}><FaShoppingCart /></Link>
-                    <div className={styles.qtd}><p>{qtd}</p></div>
+                    <Link to={'checkout'}><FaShoppingCart /><div className={styles.qtd}><p>{qtd}</p></div></Link>
                 </div>
             </nav>
         </header>
