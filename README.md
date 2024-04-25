@@ -111,7 +111,7 @@ To run the project locally, you must first set up your favorite IDE to run Java 
    ```sh
    git clone https://github.com/MatheusAquatico/Grocery_Store.git
    ```
-2. Run the Wiremock using the start.sh
+2. Go to `mock-api/wiremock` and run the Wiremock using the start.sh
 3. Go to `Grocery_Store_API/grocery_store` and install the dependencies of the Java project
 4. Run the Java project
 5. Go to `Grocery_Store_Front/grocery_store_front` and install NPM packages
