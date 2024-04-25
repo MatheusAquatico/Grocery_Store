@@ -1,5 +1,7 @@
-.cards h2 {
+.cards > h2 {
     text-align: center;
+    margin-block: 2em;
+    font-size: 2em;
 }
 .list{
     width: 100%;
@@ -8,5 +10,4 @@
     align-items: center;
     justify-content: center;
     gap: 1.5em;
-    margin: 1em;
 }

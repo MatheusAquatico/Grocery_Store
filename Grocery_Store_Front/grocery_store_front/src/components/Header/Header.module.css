@@ -14,11 +14,18 @@
     font-weight: bold;
 }
 
+.header nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .header a{
     color: var(--white-color);
     text-decoration: none;
-    padding-right: 1.5em;
-    font-size: 1.2em;
+    margin-right: 2.5em;
+    font-size: 2em;
+    width: 32px;
+    height: 32px;
 }
 
 .header a:hover{

@@ -18,25 +18,33 @@ export const CartContextProvider = ({ children, }: CartContextProviderProps) => 
 export function useCartContext() {
     const { cart , setCart } = useContext(CartContext);
 
-    function addToCart({id,name,price,promotions}: ProductData) {
+    function addToCart({id,name,price,promotions}: ProductData, addItem : boolean = true) {
         
         const repeatedItem = cart.some((item) => item.itemId === id);
         let newList = [...cart];
 
-        if(!repeatedItem){
+        if(!repeatedItem && addItem){
             newList.push({qty: 1, itemId: id, itemName: name, itemPrice: price, itemPromotion: promotions?.[0].type});
         }else{
             newList = cart.map((item) => {
                 if(item.itemId === id){
-                    console.log("entrou")
-                    return {...item, qty: item.qty + 1}
+                    if(!item.itemPromotion)
+                        if(!addItem)
+                            return {...item, qty: item.qty - 1, itemPromotion: promotions?.[0].type};
+                        else
+                            return {...item, qty: item.qty + 1, itemPromotion: promotions?.[0].type};
+                    else
+                        if(!addItem)
+                            return {...item, qty: item.qty - 1};
+                        else
+                            return {...item, qty: item.qty + 1};
                 } else {
                     return item;
                 }
             });
         }
 
-        // newList = newList.filter((item) =>item.itemId !== id);
+        newList = newList.filter((item) =>item.qty > 0);
 
         return setCart(newList);
     }
