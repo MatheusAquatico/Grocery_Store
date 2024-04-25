@@ -46,19 +46,23 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
+    position: relative;
 }
 .qtd{
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border-radius: 100%;
     background-color: var(--white-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: -8px;
+    right:  -8px;
 }
 
 .qtd p{
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--secondary-color);
 }
 
@@ -77,4 +81,16 @@
     .margin{
         margin-right: 0.5em;
     }
+    .qtd{
+        width: 16px;
+        height: 16px;
+        border-radius: 100%;
+        top: -4px;
+        right:  -4px;
+    }
+
+    .qtd p{
+        font-size: 0.8em;
+    }
+    
 }
