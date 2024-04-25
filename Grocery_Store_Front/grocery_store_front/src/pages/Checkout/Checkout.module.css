@@ -39,6 +39,7 @@
     margin: 0.5em;
     padding-bottom: 1em;
     font-size: 1.5em;
+    color: var(--secondary-color);
 }
 
 .cart_totals {
@@ -65,4 +66,49 @@
 
 .cart_totals td {
     text-align: center;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 480px){
+    .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 1em;
+        padding: 1em;
+        font-size: 1em;
+    }
+    
+    .cart {
+        border-radius: 3px;
+        padding: 1em;
+    }
+    
+    .cart th,
+    .cart td {
+        padding: 0.5em;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .title_box{
+        margin: 0.5em;
+        padding-bottom: 1em;
+        font-size: 1.5em;
+    }
+    
+    .cart_totals {
+        border-radius: 3px;
+        padding: 1em;
+    }
+    
+    .cart_totals th,
+    .cart_totals td {
+        padding: 0.5em;
+    }
+    
 }

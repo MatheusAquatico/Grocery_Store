@@ -2,7 +2,8 @@ import styles from './Card.module.css';
 import { BsPlus, BsSearch, BsSubtract } from 'react-icons/bs';
 import { ProductData } from '../../interfaces/ProductData';
 import { useCartContext } from '../../contexts/CartContext';
-import { BiMinus } from 'react-icons/bi';
+import { BiDollar, BiMinus } from 'react-icons/bi';
+import { FaCentSign } from 'react-icons/fa6';
 
 const Card = ({name, price, id, promotions, handleSearch } : ProductData & { handleOpenModal: () => void, handleSearch: (id: string) => void }) => {
 
@@ -11,6 +12,7 @@ const Card = ({name, price, id, promotions, handleSearch } : ProductData & { han
     const search = () => {
         handleSearch(id);
     }
+    const image = name.match("Amazing Pizza!") ? "pizza" : name.match("Amazing Burger!") ? "burger" : name.match("Amazing Salad!") ? "salad" : name.match("Boring Fries!") ? "fries" : "default";
 
     return (
         <section className={styles.card}>
@@ -18,13 +20,16 @@ const Card = ({name, price, id, promotions, handleSearch } : ProductData & { han
             <div className={styles.offer}>
                 <div>
                     <picture className={styles.image}>
-                        <source srcSet="https://www.recipetineats.com/wp-content/uploads/2022/09/Fries-with-rosemary-salt_1.jpg" media="(max-width: 768px)"/>
-                        <img src="https://www.recipetineats.com/wp-content/uploads/2022/09/Fries-with-rosemary-salt_1.jpg" alt="Product"/>
+                        <source srcSet={`src/assets/images/${image}_small.jpg`} media="(max-width: 768px)"/>
+                        <img src={`src/assets/images/${image}_original.jpg`} alt="Product"/>
                     </picture>
                 </div>
                 <div>
                     <p>Price</p>
+                    <div className={styles.price}>
+                    <FaCentSign color='#ab4c00'/>
                     <p>{price}</p>
+                    </div>
                 </div>
             </div>
             <div className={styles.card_footer}>

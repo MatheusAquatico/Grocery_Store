@@ -2,16 +2,26 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 import { FaShoppingCart } from 'react-icons/fa';
 import { BiHome } from 'react-icons/bi';
+import { useCartContext } from '../../contexts/CartContext';
+
 
 const Header = () => {
+    let qtd = 0;
+    const { cart } = useCartContext();
+    cart.map((item) => {
+        qtd += item.qty;
+    });
     return (
         <header className={styles.header}>
-            <span>
-                My Grocery Store
+            <span className={styles.logo}>
+                <Link to={'/'}>My Grocery Store</Link>
             </span>
             <nav>
-                <Link to={'/'}><BiHome /></Link>
-                <Link to={'checkout'}><FaShoppingCart /></Link>
+                <Link className={styles.margin} to={'/'}><BiHome /></Link>
+                <div className={styles.box}>
+                    <Link to={'checkout'}><FaShoppingCart /></Link>
+                    <div className={styles.qtd}><p>{qtd}</p></div>
+                </div>
             </nav>
         </header>
     )

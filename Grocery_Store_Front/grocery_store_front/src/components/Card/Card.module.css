@@ -62,7 +62,7 @@
     margin-left: 1em;
 }
 .card_button:hover{
-    background-color: var(--purple-color);
+    background-color: var(--tertiary-color);
     transition: all 0.3s;
 }
 
@@ -80,8 +80,58 @@
 }
 
 .offer p{
-    color: var(--purple-color);
+    color: var(--secondary-color);
     font-weight: bold;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
+}
+
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 480px){
+    .card{
+        width: 250px;
+        height: 250px;
+    }
+    
+    .card h3 {
+        color: var(--primary-color);
+        margin-block: 0.5em;
+        font-size: 1em;
+    }
+    
+    .card_icons{
+        gap: 5px;
+        font-size: 0.75em;
+    }
+    
+    .card_button{
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+        font-size: 1em;
+    }
+    
+    .card_button_qtd_position{
+        margin-bottom: 0.5em;
+        margin-right: 0.5em;
+        gap: 10px;
+    }
+    .card_button_search{
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
+    }
+    .image img{
+        border-radius: 5px 5px 5px 5px;
+        width: 120px;
+        height: 90px;
+    }
+    
+    .offer p{
+        font-size: 1em;
+    }
 }

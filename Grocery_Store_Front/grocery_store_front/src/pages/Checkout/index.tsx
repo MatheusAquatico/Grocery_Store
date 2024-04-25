@@ -1,3 +1,4 @@
+import { FaCentSign } from 'react-icons/fa6';
 import { useCartContext } from '../../contexts/CartContext';
 import styles from './Checkout.module.css';
 
@@ -44,9 +45,18 @@ const Checkout = () => {
                             {cart.map((item) => (
                                 <tr key={item.itemId}>
                                     <td>{item.itemName}</td>
-                                    <td>{item.itemPrice}</td>
-                                    <td>{item.qty}</td>
-                                    <td>{item.itemPrice * item.qty}</td>
+                                    <td><div className={styles.price}>
+                                        <FaCentSign size={16}/>
+                                        <p>{item.itemPrice}</p>
+                                    </div></td>
+                                    <td>{item.qty}
+                                    </td>
+                                    <td>
+                                        <div className={styles.price}>
+                                            <FaCentSign size={16}/>
+                                            <p>{item.itemPrice * item.qty}</p>
+                                        </div>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
@@ -59,15 +69,30 @@ const Checkout = () => {
                     <tbody>
                         <tr>
                             <td>Subtotal</td>
-                            <td>{subtotal.toFixed(2)}</td>
+                            <td>
+                            <div className={styles.price}>
+                                <FaCentSign size={16}/>
+                                <p>{subtotal.toFixed(2)}</p>
+                            </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Your Savings</td>
-                            <td>{savings.toFixed(2)}</td>
+                            <td>
+                            <div className={styles.price}>
+                                <FaCentSign size={16}/>
+                                <p>{savings.toFixed(2)}</p>
+                            </div>
+                            </td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>{total.toFixed(2)}</td>
+                            <td>
+                            <div className={styles.price}>
+                                <FaCentSign size={16}/>
+                                <p>{total.toFixed(2)}</p>
+                            </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

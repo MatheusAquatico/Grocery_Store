@@ -2,6 +2,7 @@
     text-align: center;
     margin-block: 1em;
     font-size: 2em;
+    color: var(--secondary-color);
 }
 .list{
     width: 100%;
@@ -10,4 +11,5 @@
     align-items: center;
     justify-content: center;
     gap: 1.5em;
+    padding-bottom: 8em;
 }

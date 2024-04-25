@@ -35,7 +35,7 @@
 .modal_overlay .modal_body h3 {
     font-size: 1.5em;
     margin-top: 1em;
-    color: var(--purple-color);
+    color: var(--secondary-color);
 }
 
 .modal_overlay .modal_body p {
@@ -52,13 +52,6 @@
     width: 100%;
 }
 
-.modal_overlay .modal_body label {
-    color: #242424;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 18px;
-}
-
 .modal_overlay .modal_body .btn_add_promotion {
     position: initial;
     width: 100%;
@@ -70,10 +63,11 @@
     font-size: 1.5em;
     background-color: var(--primary-color);
     padding: 0.5em 1em;
+    color: var(--white-color);
 }
 
 .modal_overlay .modal_body .btn_add_promotion:hover {
-    background-color: var(--purple-color);
+    background-color: var(--tertiary-color);
     transition: all 0.3s;
 }
 
@@ -81,8 +75,8 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 24px;
+    right: 24px;
     background-color: var(--danger-color);
     color: white;
     border: none;
@@ -98,4 +92,41 @@
 .modal_overlay .modal_body .btn_close:hover {
     background-color: var(--danger-color-hover);
     transition: all 0.3s;
+}
+
+@media (max-width: 480px){ 
+    .modal_overlay .modal_body {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .modal_overlay .modal_body h2 {
+        font-size: 1.5em;
+    }
+    
+    .modal_overlay .modal_body h3 {
+        font-size: 1.2em;
+        margin-top: 0.75em;
+    }
+    
+    .modal_overlay .modal_body p {
+        margin-top: 1.2em;
+        font-size: 0.75em;
+    }
+    
+    .modal_overlay .modal_body .btn_add_promotion {
+        margin-top: 16px;
+        border-radius: 8px;
+        font-size: 1em;
+        padding: 0.5em 1em;
+    }
+    
+    .modal_overlay .modal_body .btn_close {
+        width: 30px;
+        height: 30px;
+        top: 16px;
+        right: 16px;
+        border-radius: 7px;
+        font-size: 1.2em;
+    }
 }

@@ -8,9 +8,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --terceary-color: #6c757d;
+  --primary-color: #ff7f18;
+  --secondary-color: #ab4c00;
+  --tertiary-color: #ffaf6f;
   --success-color: #28a745;
   --danger-color: #f03c4e;
   --danger-color-hover: #b32934;

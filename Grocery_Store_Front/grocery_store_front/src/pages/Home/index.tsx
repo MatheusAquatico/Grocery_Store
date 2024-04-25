@@ -3,14 +3,22 @@ import styles from './Home.module.css';
 import { ProductData } from '../../interfaces/ProductData';
 import { useProductData } from '../../hooks/useProductGetData';
 import { Modal } from '../../components/Modal';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import toast, { Toaster } from 'react-hot-toast';
+import Loader from '../../components/Loader';
 
 const Home = () => {
     const {data: productsData} = useProductData();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalData, setModalData] = useState<ProductData | null>(null);
+
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, [])
 
     const showErrorToast = () => {
         toast.error("No promotions found for this product")
@@ -43,7 +51,8 @@ const Home = () => {
         <section className={styles.cards}>
             <Toaster position="bottom-center" reverseOrder={false}/>
             <h2>Products</h2>
-           {
+           {    
+                loading ? <Loader/> : 
                 productsData && productsData.data.length > 0 ? (
                     <section className={styles.list}>
                         {
