@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.grocery_store.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.example.grocery_store.dto.ProductDTO;
 import com.example.grocery_store.model.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,12 +24,12 @@ public class ProductController {
     }
 
     @GetMapping
-    public List<Product> getProducts() {
+    public List<ProductDTO> getProducts() {
         return productService.list();
     }
 
     @GetMapping("/{id}")
-    public Product findById(@PathVariable @NotNull String id) {
+    public ProductDTO findById(@PathVariable @NotNull String id) {
         return productService.findById(id);
     }
 }
