@@ -7,8 +7,6 @@ import com.example.grocery_store.service.ProductService;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.grocery_store.dto.ProductDTO;
-import com.example.grocery_store.model.Product;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import jakarta.validation.constraints.NotNull;
 
