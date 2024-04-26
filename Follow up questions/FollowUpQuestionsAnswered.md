@@ -29,7 +29,7 @@ public record ProductDTO(
 }
 ```
 ## 3. What did you find most difficult?
-- I spent a part of my development time on the frontend because I wanted to create a joyful experience for the user. I came up with a user-friendly layout, chose a color palette that is useful, attractive, and complements the theme. I adjusted the style to be useful on small screens as well, and I added a lot of features that improve the overall experience.
+- I spent a part of my development time on the frontend because I wanted to create a joyful experience for the user. I came up with a user-friendly layout, chose a color palette that is useful, attractive, and complements the theme. Also I adjusted the style to be useful on small screens as well, and I added a lot of features that improve the overall experience.
 
 ## 4. What mechanism did you put in place to track down issues in production on this code? If you didn’t put anything, write down what you could do.
 - I could add a log that tracks all the messages on the backend, especially the errors. This way, in the event of breaks occurring in production, we would be able to easily track these errors and fix them promptly.
