@@ -16,6 +16,7 @@ public class Promotion {
     private String id;
 
     @NotBlank
+    @NotNull
     private String type;
 
     @Nullable

@@ -10,6 +10,8 @@ import jakarta.validation.constraints.NotNull;
 
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
 public record ProductDTO(
+    @NotBlank
+    @NotNull
     String id,
     @NotBlank
     @NotNull

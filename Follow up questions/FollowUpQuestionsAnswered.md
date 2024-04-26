@@ -15,6 +15,8 @@
 
 ```java
 public record ProductDTO(
+    @NotBlank
+    @NotNull
     String id,
     @NotBlank
     @NotNull
